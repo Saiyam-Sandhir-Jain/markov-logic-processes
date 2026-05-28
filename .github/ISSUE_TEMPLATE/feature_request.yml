@@ -1,0 +1,21 @@
+name: Feature Request
+description: Suggest an improvement or new capability
+title: "[FEAT] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      placeholder: "Why is this needed? What problem does it solve?"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Change
+      placeholder: "Describe your proposed implementation or idea"
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
