@@ -1,0 +1,34 @@
+name: Bug Report
+description: Something is broken or producing wrong results
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for reporting! Please fill in the fields below."
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "e.g. Kaggle T4, Ubuntu 22.04, Python 3.10, PyTorch 2.1"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      placeholder: "What happened? What did you expect?"
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to Reproduce
+      placeholder: "Minimal code / steps to reproduce the issue"
+    validations:
+      required: true
+  - type: textarea
+    id: traceback
+    attributes:
+      label: Error / Traceback
+      render: python
