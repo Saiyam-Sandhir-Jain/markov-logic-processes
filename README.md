@@ -243,10 +243,10 @@ Or use the `CITATION.cff` file: GitHub renders a *Cite this repository* button a
 
 | Name | Role | Affiliation |
 |------|------|-------------|
-| **Saiyam Jain** | Primary author, implementation lead | — |
-| **Swaroop Bhowmik** | Co-author | — |
-| **Dipanjan Choudhury** | Co-author | — |
-| **Santosh Kumar Sahoo** | Co-author | — |
+| **Saiyam Jain** | Primary author, implementation lead | VIT Bhopal University |
+| **Swaroop Bhowmik** | Co-author | VIT Bhopal University |
+| **Dipanjan Choudhury** | Co-author | VIT Bhopal University |
+| **Santosh Kumar Sahoo** | Co-author | VIT Bhopal University |
 
 ---
 
