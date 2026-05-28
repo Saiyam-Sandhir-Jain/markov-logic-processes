@@ -1,0 +1,15 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Ablation sweep overrides — inherits from default.yaml.
+# Usage: load default.yaml first, then deep-merge this file on top.
+# ─────────────────────────────────────────────────────────────────────────────
+
+experiment:
+  name: "mlp_lambda_sweep"
+  seeds: [42, 123, 456]      # 3 seeds for ablation speed
+
+# Lambda sensitivity sweep values (uncomment the one to test)
+logos:
+  lambda_scale: 1.5          # paper default; also try 0.5, 1.0, 2.0, 3.0
+
+# To run a single environment only, comment out one entry in `environments`
+# (see default.yaml for full list).

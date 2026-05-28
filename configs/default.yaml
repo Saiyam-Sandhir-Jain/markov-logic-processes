@@ -1,0 +1,62 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Markov Logic Process — Default Hyperparameters
+# Matches the paper's Table I experimental configuration exactly.
+# ─────────────────────────────────────────────────────────────────────────────
+
+experiment:
+  name: "mlp_ablation_v1"
+  seeds: [42, 123, 456, 789, 1337]
+  n_episodes: 600
+  eval_episodes: 50          # greedy evaluation after training
+  solve_threshold: 200       # MA-100 must exceed this to "solve"
+
+environments:
+  ll_std:
+    id: "LunarLander-v3"
+    display_name: "LunarLander (standard)"
+    enable_wind: false
+    wind_power: 0.0
+    turbulence_power: 0.0
+  ll_wind:
+    id: "LunarLander-v3"
+    display_name: "LunarLander (wind + turbulence)"
+    enable_wind: true
+    wind_power: 15.0
+    turbulence_power: 1.5
+
+dqn:                          # shared backbone for all three agent variants
+  hidden_units: [64, 64]
+  activation: "relu"
+  optimizer: "adam"
+  lr: 1.0e-3
+  gamma: 0.99
+  batch_size: 64
+  replay_capacity: 10000
+  target_update_freq: 100     # steps between target-network syncs
+  eps_start: 1.0
+  eps_end: 0.05
+  eps_decay_episodes: 300     # linear decay over first N episodes
+
+logos:                        # Logos module hyperparameters
+  lambda_scale: 1.5           # λ — shaping bonus scale factor
+  window_size: 2000           # W — sliding experience window
+  mine_interval: 2000         # Δ — steps between Apriori runs
+  min_support: 0.20           # σ
+  min_confidence: 0.80        # κ
+  persistence_threshold: 3    # ρ_min to classify a rule as "persistent"
+  persistence_cap: 5          # min(ρ, cap) prevents runaway weighting
+  deduction_threshold: 0.90   # U_L > this enables full deductive override
+
+feature_discretisation:
+  n_bins: 3                   # Low / Med / High
+  scheme: "hybrid_ew_ef"      # Equal-Width + Equal-Frequency blended
+  continuous_feature_idx: [0, 1, 2, 3, 4, 5]   # skip binary leg-contact sensors
+
+checkpoint:
+  save_every_seed: true       # save individual seed checkpoint immediately
+  base_dir: "checkpoints"     # relative to notebook working dir
+
+model_export:
+  save_best: true
+  metric: "eval_mean"         # metric used to select "best" seed
+  format: "pytorch_state_dict"
