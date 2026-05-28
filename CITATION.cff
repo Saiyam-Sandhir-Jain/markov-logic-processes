@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+message: >
+  If you use this code or build on this research, please cite the
+  following work. The paper is currently under review.
+title: >
+  Markov Logic Process: Augmenting Reinforcement Learning with
+  Symbolic Association-Rule Reasoning via the Logos Module
+authors:
+  - family-names: Jain
+    given-names: Saiyam
+    orcid: "https://orcid.org/0000-0000-0000-0000"   # replace with real ORCID
+  - family-names: Bhowmik
+    given-names: Swaroop
+  - family-names: Choudhury
+    given-names: Dipanjan
+  - family-names: Sahoo
+    given-names: Santosh Kumar
+version: "1.0.0"
+date-released: "2025-01-01"
+license: Apache-2.0
+repository-code: "https://github.com/saiyamjain/markov-logic-process"
+url: "https://github.com/saiyamjain/markov-logic-process"
+abstract: >
+  We propose the Markov Logic Process (MLP), a six-tuple
+  (S, A, P, R, γ, L) that extends the classical MDP with a Logos
+  module capable of online symbolic association-rule discovery.
+  The Logos-augmented Bellman operator V_L(s) = max_a[R(s,a) +
+  λΦ_L(s,a) + γV_L(s')] shapes both the value update and action
+  selection using logic potentials mined asynchronously from the
+  agent's own experience replay buffer. Ablation studies on
+  LunarLander (standard and wind/turbulence variants) over 5 seeds
+  show MLP-Full achieves +21.7% and +31.4% improvements over the
+  DQN baseline, with significantly improved post-convergence
+  stability and reduced catastrophic failure modes.
+keywords:
+  - reinforcement-learning
+  - Markov-decision-process
+  - association-rule-mining
+  - symbolic-reasoning
+  - deep-Q-network
+  - reward-shaping
+  - neuro-symbolic-AI
+  - LunarLander
+preferred-citation:
+  type: article
+  title: >
+    Markov Logic Process: Augmenting Reinforcement Learning with
+    Symbolic Association-Rule Reasoning via the Logos Module
+  authors:
+    - family-names: Jain
+      given-names: Saiyam
+    - family-names: Bhowmik
+      given-names: Swaroop
+    - family-names: Choudhury
+      given-names: Dipanjan
+    - family-names: Sahoo
+      given-names: Santosh Kumar
+  year: 2025
+  status: under-review

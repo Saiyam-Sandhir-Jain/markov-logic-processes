@@ -1,0 +1,80 @@
+# ── Python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+# ── Virtual environments ───────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── PyTorch / model weights ────────────────────────────────────────────────
+# Do NOT commit trained models — use GitHub Releases or HF Hub instead.
+models/*.pt
+models/*.pth
+models/*.ckpt
+models/*.pkl
+# Keep the gitkeep placeholder
+!models/.gitkeep
+
+# ── Experiment outputs & checkpoints ──────────────────────────────────────
+results/figures/*.png
+results/figures/*.pdf
+results/*.json
+results/*.jsonl
+results/*.tex
+results/*.html
+results/*.zip
+checkpoints/
+# Keep structure placeholders
+!results/.gitkeep
+
+# ── Kaggle session artefacts ───────────────────────────────────────────────
+/kaggle/
+*.ipynb_checkpoints/
+.ipynb_checkpoints/
+
+# ── Jupyter ────────────────────────────────────────────────────────────────
+*.ipynb_checkpoints
+.jupyter/
+nbconvert_output/
+
+# ── IDEs ───────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Logs & debug ──────────────────────────────────────────────────────────
+*.log
+run_log.jsonl
+wandb/
+mlruns/
+
+# ── Videos (large, share via releases/HF Hub) ─────────────────────────────
+*.mp4
+*.avi
+*.mov
+*.gif
+# But keep any demo GIFs committed under assets/
+!assets/*.gif
+
+# ── HuggingFace Hub cache ─────────────────────────────────────────────────
+.cache/
+~/.cache/huggingface/
+
+# ── Misc ──────────────────────────────────────────────────────────────────
+*.bak
+*.tmp
+.env
